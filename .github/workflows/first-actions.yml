@@ -2,6 +2,9 @@ name: My First GitHub Actions
 
 on:
 workflow_dispatch:
+  inputs:
+    name:
+      default:'dev'
 
 jobs:
   build:
