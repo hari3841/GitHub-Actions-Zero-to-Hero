@@ -1,6 +1,23 @@
 name: My First GitHub Actions
 
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Target environment'
+        required: true
+        default:'dev'
+        type: choice
+        options:
+          -dev
+          -qa
+          -prod
+          sequence_files:
+            description: 'comma-separated sequence file names (e.g. sequence_123456_A.yaml, sequence_123456_B.yaml)
+            required: true
+    
+        
+  
 
 jobs:
   build:
